@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+# Created by https://www.toptal.com/developers/gitignore/api/hexo,serverless
+# Edit at https://www.toptal.com/developers/gitignore?templates=hexo,serverless
+### Serverless ###
+# Ignore build directory
+.serverless
+
+# End of https://www.toptal.com/developers/gitignore/api/hexo,serverless
