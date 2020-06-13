@@ -1,5 +1,5 @@
 ---
-title: JS高程-script元素与DOM树构建的阻塞
+title: JS高程-Script元素与DOM树构建的阻塞
 date: 2020-06-11 11:08:24
 category: 
 - 前端

@@ -11,9 +11,9 @@
 # 全局
 # Site
 #---------------------------
-favicon: /img/favicon.png # 网站标签页的 icon
+favicon: https://rook1e.com/image/favicon.png # 网站标签页的 icon
 
-apple_touch_icon: /img/favicon.png # 用于苹果设备的 icon
+apple_touch_icon: https://rook1e.com/image/favicon.png # 用于苹果设备的 icon
 
 title_join_string: ' - '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
@@ -99,7 +99,7 @@ aplayer:  # 音乐播放器，注意不能与 hexo-tag-aplayer 插件共用
     # - { name: 'name', artist: 'artist', url: 'https://...url.mp3', cover: 'https://...cover.jpg' }
 
 version:  # 主题版本相关
-  check: false  # 每次生成页面后，检测主题是否为最新版本
+  check: true  # 每次生成页面后，检测主题是否为最新版本
 
 #---------------------------
 # 页头
@@ -187,7 +187,7 @@ page:
 # Post Page
 #---------------------------
 post:  # 部分配置同时控制自定义页面，注意备注
-  banner_img: /img/default.png
+  banner_img: https://img-1251598303.cos.ap-guangzhou.myqcloud.com/168164-106.jpg
   banner_img_height: 70  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   meta:  # 文章标题下方的信息
