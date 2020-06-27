@@ -1,5 +1,5 @@
 ---
-title: JS最新基本数据类型BigInt介绍
+title: JS最新基本数据类型BigInt介绍【转载】
 date: 2020-06-12 18:07:21
 tags: 
 - 
