@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
-
 <%
 var subtitle = page.subtitle || page.title
 var banner_img = page.banner_img || theme.index.banner_img
@@ -9,7 +8,6 @@ var banner_mask_alpha = page.banner_mask_alpha || theme.index.banner_mask_alpha
 %>
 
 <%- partial('_partial/head') %>
-
 <body>
   <header style="height: <%- banner_img_height %>vh;">
     <%- partial('_partial/nav') %>
@@ -90,6 +88,62 @@ var banner_mask_alpha = page.banner_mask_alpha || theme.index.banner_mask_alpha
   <% } %>
 
   <%- partial('_partial/footer', { data: { 'subtitle': subtitle } }) %>
+  <script>
+    // pjax
+    var pjax = new Pjax({
+    selectors: [
+      "title",
+      "main",
+      "header",
+    ]
+   })
 
+          //加载valine
+   function LoadValine(){
+      $.getScript("https://cdn.staticfile.org/valine/1.4.14/Valine.min.js", function() {
+
+        // 生成评论的代码
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '<%= theme.valine.meta %>'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        var valine = new Valine();
+        valine.init({
+          el: "#vcomments",
+          guest_info: guest_info,
+          app_id: "<%= theme.valine.appid %>",
+          app_key: "<%= theme.valine.appkey %>",
+          placeholder: "<%= theme.valine.placeholder %>",
+          path: <%= theme.valine.path %>,
+          avatar: "<%= theme.valine.avatar %>",
+          meta: <%- JSON.stringify(theme.valine.meta || []) %>,
+          pageSize: "<%= theme.valine.pageSize %>",
+          lang: "<%= theme.valine.lang %>",
+          highlight: <%= theme.valine.highlight %>,
+          recordIP: <%= theme.valine.recordIP %>,
+          serverURLs: "<%= theme.valine.serverURLs %>"
+        })
+    });
+  };
+
+        //pjax开始时加载函数
+      document.addEventListener('pjax:send', function (){
+    $(".loading").css("display", "block");//加载转圈圈的css
+     });
+
+       // pjax加载结束后执行函数
+      document.addEventListener('pjax:complete', function (){
+      $(".loading").css("display", "none");
+        $.getScript("/js/lazyload.js");
+        $.getScript("/js/main.js");
+        $.getScript("/js/debouncer.js");
+      });
+
+      // 窗口监听load(加载、刷新)事件，执行函数
+      window.addEventListener('load',function(){
+       $.getScript("/js/main.js");
+      });
+
+  </script>
 </body>
 </html>
