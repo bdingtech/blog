@@ -99,7 +99,7 @@ aplayer:  # 音乐播放器，注意不能与 hexo-tag-aplayer 插件共用
     # - { name: 'name', artist: 'artist', url: 'https://...url.mp3', cover: 'https://...cover.jpg' }
 
 version:  # 主题版本相关
-  check: true  # 每次生成页面后，检测主题是否为最新版本
+  check: false  # 每次生成页面后，检测主题是否为最新版本
 
 #---------------------------
 # 页头
@@ -166,7 +166,7 @@ index:
   post_default_img: '' # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
   slogan:  # 首页副标题的独立设置
     enable: true  # 为 false 则不显示任何内容
-    text: 'A place to record'  # 为空则按 hexo config.subtitle 显示
+    text: '唯有自由才能触摸虚无的自我'  # 为空则按 hexo config.subtitle 显示
   auto_excerpt:
     enable: true
   post_url_target: _self  # available: _blank | _self
@@ -187,7 +187,7 @@ page:
 # Post Page
 #---------------------------
 post:  # 部分配置同时控制自定义页面，注意备注
-  banner_img: https://img-1251598303.cos.ap-guangzhou.myqcloud.com/168164-106.jpg
+  banner_img: /img/default.png
   banner_img_height: 70  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   meta:  # 文章标题下方的信息
